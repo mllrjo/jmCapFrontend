@@ -5,7 +5,8 @@ export default function DataEntry() {
     const [formData, setFormData] = useState({
         dateCollected: '',
         agency: '',
-        personnelChange: '',
+        fired: '',
+        rehired: '',
         totalPersonnel: '',
         sources: '',
         summary: ''

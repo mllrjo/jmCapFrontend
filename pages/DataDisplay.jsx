@@ -1,5 +1,8 @@
-export function DataDisplay() {
-    const [agencyData, setAgencyData] = useState([]);
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+export default function DataDisplay() {
+    const [agencyData, setAgencyData] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -33,3 +36,4 @@ export function DataDisplay() {
         </div>
     );
 }
+

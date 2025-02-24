@@ -5,11 +5,18 @@ export default function SignIn() {
     const [username, setUsername] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (username.trim()) {
-            localStorage.setItem('username', username);
-            navigate('/agency-selection');
+            const response = await fetch(`${API_BASE_URL}/users`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username })
+            });
+            if (response.ok) {
+                localStorage.setItem('username', username);
+                navigate('/agency-selection');
+            }
         }
     };
 
