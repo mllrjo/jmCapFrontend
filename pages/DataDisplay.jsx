@@ -1,32 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-
-export default function DataDisplay() {
-    const [agencyData, setAgencyData] = useState(null);
+export function DataDisplay() {
+    const [agencyData, setAgencyData] = useState([]);
 
     useEffect(() => {
-        const storedData = localStorage.getItem('agencyData');
-        if (storedData) {
-            setAgencyData(JSON.parse(storedData));
+        async function fetchData() {
+            const response = await fetch(`${API_BASE_URL}/agencies`);
+            const data = await response.json();
+            setAgencyData(data);
         }
+        fetchData();
     }, []);
 
     return (
         <div>
             <h1>View Agency Data</h1>
-            {agencyData ? (
-                <div>
-                    <p><strong>Date Collected:</strong> {agencyData.dateCollected}</p>
-                    <p><strong>Agency:</strong> {agencyData.agency}</p>
-                    <p><strong>Change in Personnel:</strong> {agencyData.personnelChange}</p>
-                    <p><strong>Total Personnel:</strong> {agencyData.totalPersonnel}</p>
-                    <p><strong>Sources:</strong> {agencyData.sources}</p>
-                    <p><strong>Summary Notes:</strong> {agencyData.summary}</p>
-                </div>
+            {agencyData.length > 0 ? (
+                <ul>
+                    {agencyData.map((item, index) => (
+                        <li key={index}>
+                            <p><strong>Date Collected:</strong> {item.dateCollected}</p>
+                            <p><strong>Agency:</strong> {item.agency}</p>
+                            <p><strong>Fired:</strong> {item.fired}</p>
+                            <p><strong>[Re]Hired:</strong> {item.rehired}</p>
+                            <p><strong>Total Personnel:</strong> {item.totalPersonnel}</p>
+                            <p><strong>Sources:</strong> {item.sources}</p>
+                            <p><strong>Summary Notes:</strong> {item.summary}</p>
+                        </li>
+                    ))}
+                </ul>
             ) : (
                 <p>No data available.</p>
             )}
         </div>
     );
 }
-
