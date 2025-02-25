@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+// const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+const API_BASE_URL = "http://localhost:5002"
+console.log(API_BASE_URL);
+
 export default function DataEntry() {
     const [formData, setFormData] = useState({
         dateCollected: '',
@@ -16,19 +22,34 @@ export default function DataEntry() {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(`${API_BASE_URL}/agencies`, {
+        const formData = {
+            dateCollected: e.target.dateCollected.value,
+            agency: e.target.agency.value,
+            fired: parseInt(e.target.fired.value, 10),
+            rehired: parseInt(e.target.rehired.value, 10),
+            totalPersonnel: parseInt(e.target.totalPersonnel.value, 10),
+            sources: e.target.sources.value.split(',').map(source => source.trim()),
+            summary: e.target.summary.value
+        };
+    
+    
+        const response = await fetch('http://localhost:5002/agencies', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
         });
+    
         if (response.ok) {
-            navigate('/data-display');
+            console.log('Data submitted successfully');
+        } else {
+            console.error('Failed to submit data', response.statusText);
         }
-        console.log('Submitted Data:', formData);
     };
+    
 
     return (
         <div>

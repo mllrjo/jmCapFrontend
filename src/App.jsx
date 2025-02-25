@@ -1,16 +1,13 @@
-
-
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import SignIn from '../pages/SignIn';
 import AgencySelection from '../pages/AgencySelection';
 import DataEntry from '../pages/DataEntry';
 import DataDisplay from '../pages/DataDisplay';
-import Navbar from '../components/Navbar.jsx';
+import Navbar from '../components/Navbar';
 import './App.css';
 
-function App() {
+export default function App() {
     return (
         <Router>
             <Navbar />
@@ -24,4 +21,3 @@ function App() {
         </Router>
     );
 }
-export default App;
