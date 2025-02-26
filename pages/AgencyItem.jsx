@@ -7,7 +7,7 @@ const AgencyItem = ({ agency, onEdit, onDelete }) => (
             <p><strong>Agency:</strong> {agency.agency}</p>
             <p><strong>Fired:</strong> {agency.fired}</p>
             <p><strong>[Re]Hired:</strong> {agency.rehired}</p>
-            <p><strong>total_employees:</strong> {agency.total_employees}</p>
+            <p><strong>Total Employees:</strong> {agency.total_employees}</p>
         </div>
         <div style={{ flex: 1 }}>
             <p><strong>source:</strong> {agency.source.join(', ')}</p>

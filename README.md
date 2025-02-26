@@ -1,8 +1,44 @@
-# React + Vite
+#Federal Agency Employee Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### Real-time tracking of volatile on-going federal agency restructuring.
 
-Currently, two official plugins are available:
+## Description
+The federal job market has been on a rollercoaster — firings, rehirings, political pressure, and public outcry all shaping who stays and who goes. Changes have been occurring on a daily basis and there is no official digital information source. FEAT is a CRUD App to manipulate and exhibit data about an agency selected by a user. For now, our focus is on large personnel turnover.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+An "event" is a firing or [re]hiring at an agency. Records include: date of event, agency, number of personnel fired, number of personnel rehired, total number of agency personnel before event, information source, brief summmary obtained from public media. For a given agency, events occurring on different dates comprise distinct records.
+
+These events are unprecendented in the breadth, depth, and speed. They will roil the US econommy, sow market upheaval, and generate continual uncertainty. Certain of them, for example those that have affected nuclear weapons security, wildfire control, and the CDC as measles and human bird flu cases are starting to proliferate, may be of immediate geopolitical significance.
+
+Logging them at the earliest possible moment, designating them as "speculative" or "inferred" if necessary, could enable assessment of market impact.
+
+## Table of Contents
+* [Technologies Used](#technologiesused)
+* [Features](#features)
+* [Design](#design)
+* [Project Next Steps](#nextsteps)
+* [Deployed App](#deployment)
+* [About the Author](#author)
+
+## <a name="technologiesused"></a>Technologies Used
+* MongoDB
+* Express
+* React
+* Nodejs
+* JavaScript
+* CSS3
+
+## Features
+*Login
+*Select agency whose records to display
+*CRUD the records
+
+#### List of Future Features
+* Enable each user to select their own agencies to track.
+* Interface to LLM that recovers data from online sources in real time.
+* Styling.
+* Extend to agency chairs and officers.
+* Extend to agency budget changes.
+* Add dates to rehires.
+
+## Special Mention: Supporters of the build
+Bryan Santos, Jordan Wofford, Paul Chapman, Dylan Comeau, chatGPT
