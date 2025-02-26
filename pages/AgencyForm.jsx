@@ -36,17 +36,17 @@ const AgencyForm = ({ formData, handleChange, handleSubmit, isEditing, handleCan
                 />
                 <input
                     type='number'
-                    name='totalPersonnel'
-                    placeholder='Total Personnel'
-                    value={formData.totalPersonnel}
+                    name='total_employees'
+                    placeholder='total_employees'
+                    value={formData.total_employees}
                     onChange={handleChange}
                 />
             </div>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                 <textarea
-                    name='sources'
-                    placeholder='Sources'
-                    value={formData.sources}
+                    name='source'
+                    placeholder='source'
+                    value={formData.source}
                     onChange={handleChange}
                     style={{ width: '100%', minHeight: '100px' }}
                 ></textarea>

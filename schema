@@ -1,0 +1,8 @@
+agency: String,
+    date: String,
+    fired: String,
+    rehired: String,
+    total_employees: Number,
+    summary: String,
+    source: [String]
+});

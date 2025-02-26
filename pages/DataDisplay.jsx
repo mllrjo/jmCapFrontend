@@ -6,12 +6,12 @@ const DataDisplay = () => {
     const [agencyData, setAgencyData] = useState([]);
     const [editingAgency, setEditingAgency] = useState(null);
     const [formData, setFormData] = useState({
-        dateCollected: '',
+        date: '',
         agency: '',
         fired: '',
         rehired: '',
-        totalPersonnel: '',
-        sources: '',
+        total_employees: '',
+        source: '',
         summary: ''
     });
 
@@ -47,12 +47,12 @@ const DataDisplay = () => {
     const handleEditClick = (agency) => {
         setEditingAgency(agency._id);
         setFormData({
-            dateCollected: agency.dateCollected ? agency.dateCollected.split('T')[0] : '',
+            date: agency.date ? agency.date.split('T')[0] : '',
             agency: agency.agency || '',
             fired: agency.fired || '',
             rehired: agency.rehired || '',
-            totalPersonnel: agency.totalPersonnel || '',
-            sources: agency.sources ? agency.sources.join(', ') : '',
+            total_employees: agency.total_employees || '',
+            source: agency.source ? agency.source.join(', ') : '',
             summary: agency.summary || ''
         });
     };
@@ -79,20 +79,20 @@ const DataDisplay = () => {
                     ...formData,
                     fired: parseInt(formData.fired, 10),
                     rehired: parseInt(formData.rehired, 10),
-                    totalPersonnel: parseInt(formData.totalPersonnel, 10),
-                    sources: formData.sources.split(',').map((source) => source.trim())
+                    total_employees: parseInt(formData.total_employees, 10),
+                    source: formData.source.split(',').map((source) => source.trim())
                 })
             });
             if (response.ok) {
                 fetchAgencies(); // Refresh the list
                 setEditingAgency(null); // Exit edit mode
                 setFormData({
-                    dateCollected: '',
+                    date: '',
                     agency: '',
                     fired: '',
                     rehired: '',
-                    totalPersonnel: '',
-                    sources: '',
+                    total_employees: '',
+                    source: '',
                     summary: ''
                 });
             } else {
@@ -106,12 +106,12 @@ const DataDisplay = () => {
     const handleCancel = () => {
         setEditingAgency(null);
         setFormData({
-            dateCollected: '',
+            date: '',
             agency: '',
             fired: '',
             rehired: '',
-            totalPersonnel: '',
-            sources: '',
+            total_employees: '',
+            source: '',
             summary: ''
         });
     };
@@ -128,12 +128,7 @@ const DataDisplay = () => {
                 />
             ) : (
                 <>
-                    <AgencyForm
-                        formData={formData}
-                        handleChange={handleInputChange}
-                        handleSubmit={handleSubmit}
-                        isEditing={false}
-                    />
+                   
                     <h2>Agency Data</h2>
                     {agencyData.length > 0 ? (
                         agencyData.map((agency) => (
