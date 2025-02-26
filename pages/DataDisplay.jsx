@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import AgencyForm from '../pages/AgencyForm';
+import AgencyItem from '../pages/AgencyItem';
 
-export default function DataDisplay() {
+const DataDisplay = () => {
     const [agencyData, setAgencyData] = useState([]);
     const [editingAgency, setEditingAgency] = useState(null);
     const [formData, setFormData] = useState({
@@ -12,7 +14,6 @@ export default function DataDisplay() {
         sources: '',
         summary: ''
     });
-   
 
     useEffect(() => {
         fetchAgencies();
@@ -46,13 +47,13 @@ export default function DataDisplay() {
     const handleEditClick = (agency) => {
         setEditingAgency(agency._id);
         setFormData({
-            dateCollected: agency.dateCollected ? agency.dateCollected.split('T')[0]: '',
+            dateCollected: agency.dateCollected ? agency.dateCollected.split('T')[0] : '',
             agency: agency.agency || '',
             fired: agency.fired || '',
             rehired: agency.rehired || '',
             totalPersonnel: agency.totalPersonnel || '',
-            sources: agency.sources ? agency.sources.join(', ') : '' ,
-            summary: agency.summary || '',
+            sources: agency.sources ? agency.sources.join(', ') : '',
+            summary: agency.summary || ''
         });
     };
 
@@ -61,11 +62,16 @@ export default function DataDisplay() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleUpdate = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        const method = editingAgency ? 'PUT' : 'POST';
+        const url = editingAgency
+            ? `http://localhost:5002/agencies/${editingAgency}`
+            : 'http://localhost:5002/agencies';
+
         try {
-            const response = await fetch(`http://localhost:5002/agencies/${editingAgency}`, {
-                method: 'PUT',
+            const response = await fetch(url, {
+                method,
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -90,53 +96,61 @@ export default function DataDisplay() {
                     summary: ''
                 });
             } else {
-                console.error('Failed to update agency:', response.statusText);
+                console.error('Failed to submit agency:', response.statusText);
             }
         } catch (error) {
-            console.error('Error updating agency:', error);
+            console.error('Error submitting agency:', error);
         }
+    };
+
+    const handleCancel = () => {
+        setEditingAgency(null);
+        setFormData({
+            dateCollected: '',
+            agency: '',
+            fired: '',
+            rehired: '',
+            totalPersonnel: '',
+            sources: '',
+            summary: ''
+        });
     };
 
     return (
         <div>
-            
             {editingAgency ? (
-                <div>
-                    <h1>Edit Agency Data</h1>
-                    <form onSubmit={handleUpdate}>
-                       <div style={{ flex: 1 }}>
-                         <input type='date' name='dateCollected' value={formData.dateCollectedleInputChange} required />
-                         <input type='text' name='agency' placeholder='Agency Name' value={formData.agency} onChange={handleInputChange} required />
-                         <input type='text' name='fired' placeholder='fired' value={formData.personnelChange} onChange={handleInputChange} />
-                         <input type='text' name='rehired' placeholder='[re]hired' value={formData.personnelChange} onChange={handleInputChange} />
-                         <input type='number' name='totalPersonnel' placeholder='Total Personnel' value={formData.totalPersonnel} onChange={handleInputChange} />
-                     </div>
-                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                        <textarea name='sources' placeholder='Sources' value={formData.sources} onChange={handleInputChange} style={{ width: '100%', minHeight: '100px' }}></textarea>
-                        <textarea name='summary' placeholder='Summary Notes' value={formData.summary} onChange={handleInputChange} style={{ width: '100%', minHeight: '100px' }}></textarea>    
-                        <button type='submit' style={{ alignSelf: 'center', marginTop: '10px' }}>Submit</button>
-                    </div>
-                    <button type="submit">Update</button>
-                    <button type="button" onClick={() => setEditingAgency(null)}>Cancel</button>
-                </form>
-                </div>
+                <AgencyForm
+                    formData={formData}
+                    handleChange={handleInputChange}
+                    handleSubmit={handleSubmit}
+                    isEditing={true}
+                    handleCancel={handleCancel}
+                />
             ) : (
-                <ul>
-                    {agencyData.map((agency) => (
-                        <li key={agency._id}>
-                            <p><strong>Date Collected:</strong> {new Date(agency.dateCollected).toLocaleDateString()}</p>
-                            <p><strong>Agency:</strong> {agency.agency}</p>
-                            <p><strong>Fired:</strong> {agency.fired}</p>
-                            <p><strong>[Re]Hired:</strong> {agency.rehired}</p>
-                            <p><strong>Total Personnel:</strong> {agency.totalPersonnel}</p>
-                            <p><strong>Sources:</strong> {agency.sources.join(', ')}</p>
-                            <p><strong>Summary Notes:</strong> {agency.summary}</p>
-                            <button onClick={() => handleEditClick(agency)}>Edit</button>
-                            <button onClick={() => handleDelete(agency._id)}>Delete</button>
-                        </li>
-                    ))}
-                </ul>
+                <>
+                    <AgencyForm
+                        formData={formData}
+                        handleChange={handleInputChange}
+                        handleSubmit={handleSubmit}
+                        isEditing={false}
+                    />
+                    <h2>Agency Data</h2>
+                    {agencyData.length > 0 ? (
+                        agencyData.map((agency) => (
+                            <AgencyItem
+                                key={agency._id}
+                                agency={agency}
+                                onEdit={handleEditClick}
+                                onDelete={handleDelete}
+                            />
+                        ))
+                    ) : (
+                        <p>No data available.</p>
+                    )}
+                </>
             )}
         </div>
     );
-}
+};
+
+export default DataDisplay;
