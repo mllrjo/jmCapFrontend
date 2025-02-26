@@ -7,8 +7,8 @@ const AgencyForm = ({ formData, handleChange, handleSubmit, isEditing, handleCan
             <div style={{ flex: 1 }}>
                 <input
                     type='date'
-                    name='dateCollected'
-                    value={formData.dateCollected}
+                    name='date'
+                    value={formData.date}
                     onChange={handleChange}
                     required
                 />
