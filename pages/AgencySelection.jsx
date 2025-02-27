@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../src/AgencySelection.css'; // Import the CSS file for styling
 
 export default function AgencySelection() {
     const [agencies, setAgencies] = useState([]);
@@ -17,6 +18,7 @@ export default function AgencySelection() {
             .then(data => setAgencies(data))
             .catch(error => console.error('Error fetching agencies:', error));
     }, []);
+
     // Handle toggling of agency selection
     const handleToggle = (agencyId) => {
         setSelectedAgencies(prevSelected => {
@@ -44,14 +46,15 @@ export default function AgencySelection() {
             <ul>
                 {agencies.map(agency => (
                     <li key={agency._id}>
-                        <label>
+                        <div className="checkbox-container">
                             <input
-                                type='checkbox'
+                                type="checkbox"
+                                id={agency._id}
                                 checked={selectedAgencies.includes(agency._id)}
                                 onChange={() => handleToggle(agency._id)}
                             />
-                            {agency.name}
-                        </label>
+                            <label htmlFor={agency._id}>{agency.name}</label>
+                        </div>
                     </li>
                 ))}
             </ul>

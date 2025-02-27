@@ -1,0 +1,10 @@
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px; /* Space between each checkbox-label pair */
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 8px; /* Space between checkbox and label */
+}
