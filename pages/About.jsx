@@ -23,9 +23,9 @@ export default function About() {
         </p>
   
         <p>
-          <strong>These events are unprecedented since WWII in their breadth, depth, and <em>speed.</em></strong>
-          They will roil the U.S. economy, sow market upheaval, and generate
-          continual uncertainty. Certain events - such as those affecting nuclear
+          <strong>These events are unprecedented in the USA <em> post</em> WWII in their breadth, depth, and <em>speed.</em></strong>
+          Since January 21, 2025 they will continually roil the U.S. economy, sow market upheaval, and 
+          add to and exacerbate existing uncertainties. Certain events - such as those affecting nuclear
           weapons security, wildfire control, the FAA, FDIC, and CDC amid rising measles and
           human bird flu cases - will have immediate economic, financial, medical, and geopolitical significance.
         </p>

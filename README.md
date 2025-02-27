@@ -31,19 +31,30 @@ Logging them at the earliest possible moment, designating them as "speculative" 
 * Nodejs
 * JavaScript
 * CSS3
+HYPER-MINIMALISTIC, as you can already see. "Primitivist," perhaps; or even "brutalist."
+
+THANKS FOR ILLUSTRATING FOR ME THIS MORNING HOW TO DO A PROPER README.
+
+AS ALWAYS, I ALREADY LEARNED MANY GREAT FORMATTING (AND OTHER) IDEAS FROM Y'ALL THIS MORNING.
+I HOPE YOU WILL ALL SHARE WITH US THE LINK TO YOUR CAPSTONE PROJECT GITHUB.
 
 ## Features
-*User "login" (partially functional)
-*Select agency whose records to display (partially functional)
+*User "login" ('partially' functional)
+*Select agency whose records to display ('partially' functional)
 *CRUD the records (fully functional)
+*MongoDB via mongoose
 
 #### List of Future Features
+* Proper README.
+* Error Handling.
 * Enable each user to select their own agencies to track.
-* Interface to LLM that recovers and agglomerates data from online sources in real time.
-* Styling.
+* User JWT authentication.
+* Real-time automated interface to LLM that recovers and agglomerates data from online sources in real time.
+* Decent styling.
 * Extend to agency chairs and officers.
 * Extend to agency budget changes: what are the savings yielded by the cuts?
 * Add dates to rehires.
+* Comprehensive coverage.
 
 * Refine LLM Query:
 Extract employment change data for [the specified agency] since [date]
