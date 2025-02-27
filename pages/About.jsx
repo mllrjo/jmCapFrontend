@@ -35,6 +35,7 @@ export default function About() {
           as "speculative" or "inferred" if necessary, could enable the assessment
           of market impact.
         </p>
+        <h4><i>Acknowledgements: Bryan Santos, Jordan Wofford, Paul Chapman, Dylan Comeau, Per Scholas, my classmates, and chatGPT</i></h4>
       </>
     );
   }
