@@ -12,8 +12,8 @@ export default function Navbar() {
             <ul className="navbar-bottom">
                 <li><Link to="/signin">Sign In</Link></li>
                 <li><Link to="/agency-selection">Select Agencies</Link></li>
-                <li><Link to="/data-entry">Enter Data</Link></li>
-                <li><Link to="/data-display">View and Edit Data</Link></li>
+                <li><Link to="/data-entry">Enter Agency</Link></li>
+                <li><Link to="/data-display">View and Edit Agency</Link></li>
             </ul>
         </nav>
     );

@@ -31,9 +31,10 @@ Logging them at the earliest possible moment, designating them as "speculative" 
 * Nodejs
 * JavaScript
 * CSS3
+No need for such an App before January 21, 2025.
 HYPER-MINIMALISTIC, as you can already see. "Primitivist," perhaps; or even "brutalist."
 
-THANKS FOR ILLUSTRATING FOR ME THIS MORNING HOW TO DO A PROPER README.
+THANKS FOR ILLUSTRATING FOR ME THIS MORNING HOW TO WRITE A PROPER README.
 
 AS ALWAYS, I ALREADY LEARNED MANY GREAT FORMATTING (AND OTHER) IDEAS FROM Y'ALL THIS MORNING.
 I HOPE YOU WILL ALL SHARE WITH US THE LINK TO YOUR CAPSTONE PROJECT GITHUB.
@@ -46,6 +47,7 @@ I HOPE YOU WILL ALL SHARE WITH US THE LINK TO YOUR CAPSTONE PROJECT GITHUB.
 
 #### List of Future Features
 * Proper README.
+* UI and branding.
 * Error Handling.
 * Enable each user to select their own agencies to track.
 * User JWT authentication.
@@ -53,7 +55,8 @@ I HOPE YOU WILL ALL SHARE WITH US THE LINK TO YOUR CAPSTONE PROJECT GITHUB.
 * Decent styling.
 * Extend to agency chairs and officers.
 * Extend to agency budget changes: what are the savings yielded by the cuts?
-* Add dates to rehires.
+* Add dates to rehires; distinguish new hires from rehires.
+* Fix database redundancy.
 * Comprehensive coverage.
 
 * Refine LLM Query:
