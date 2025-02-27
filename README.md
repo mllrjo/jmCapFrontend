@@ -3,11 +3,13 @@
 #### Real-time tracking of volatile on-going federal agency restructuring.
 
 ## Description
-The federal job market has been on a rollercoaster — firings, rehirings, political pressure, and public outcry all shaping who stays and who goes. Changes have been occurring on a daily basis and there is no official digital information source. FEAT is a CRUD App to manipulate and exhibit data about an agency selected by a user. For now, our focus is on large personnel turnover.
+The federal job market has been on a rollercoaster — firings, rehirings, political pressure, and public outcry all shaping who stays and who goes. Changes have been occurring on a daily basis and there is no official digital information source. FAET is a CRUD App to manipulate and exhibit data about an agency selected by a user. For now, the focus is on large personnel turnover.
 
 An "event" is a firing or [re]hiring at an agency. Records include: date of event, agency, number of personnel fired, number of personnel rehired, total number of agency personnel before event, information source, brief summmary obtained from public media. For a given agency, events occurring on different dates comprise distinct records.
 
-These events are unprecendented in the breadth, depth, and speed. They will roil the US econommy, sow market upheaval, and generate continual uncertainty. Certain of them, for example those that have affected nuclear weapons security, wildfire control, and the CDC as measles and human bird flu cases are starting to proliferate, may be of immediate geopolitical significance.
+These events are unprecendented in the breadth, depth, and speed.
+
+They will roil the US econommy, sow market upheaval, and generate continual uncertainty. Certain of them, for example those that have affected nuclear weapons security, wildfire control, and the CDC as measles and human bird flu cases are starting to proliferate, may be of immediate geopolitical significance.
 
 Logging them at the earliest possible moment, designating them as "speculative" or "inferred" if necessary, could enable assessment of market impact.
 
@@ -37,7 +39,7 @@ Logging them at the earliest possible moment, designating them as "speculative" 
 * Interface to LLM that recovers data from online sources in real time.
 * Styling.
 * Extend to agency chairs and officers.
-* Extend to agency budget changes.
+* Extend to agency budget changes: what are the savings yielded by the cuts?
 * Add dates to rehires.
 
 ## Special Mention: Supporters of the build
