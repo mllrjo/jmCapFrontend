@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../src/AgencySelection.css'; // Import the CSS file for styling
+import '../AgencySelection.css'; // Import the CSS file for styling
 
 export default function AgencySelection() {
     const [agencies, setAgencies] = useState([]);
