@@ -16,6 +16,8 @@ They will roil the US econommy, sow market upheaval, and generate continual unce
 
 Logging them at the earliest possible moment, designating them as "speculative" or "inferred" if necessary, could enable assessment of market impact.
 
+Who could have anticipated the need for such an App before January 21, 2025?
+
 ## Table of Contents
 * [Technologies Used](#technologiesused)
 * [Features](#features)
@@ -31,13 +33,6 @@ Logging them at the earliest possible moment, designating them as "speculative" 
 * Nodejs
 * JavaScript
 * CSS3
-No need for such an App before January 21, 2025.
-HYPER-MINIMALISTIC, as you can already see. "Primitivist," perhaps; or even "brutalist."
-
-THANKS FOR ILLUSTRATING FOR ME THIS MORNING HOW TO WRITE A PROPER README.
-
-AS ALWAYS, I ALREADY LEARNED MANY GREAT FORMATTING (AND OTHER) IDEAS FROM Y'ALL THIS MORNING.
-I HOPE YOU WILL ALL SHARE WITH US THE LINK TO YOUR CAPSTONE PROJECT GITHUB.
 
 ## Features
 *User "login" ('partially' functional)
@@ -58,6 +53,7 @@ I HOPE YOU WILL ALL SHARE WITH US THE LINK TO YOUR CAPSTONE PROJECT GITHUB.
 * Add dates to rehires; distinguish new hires from rehires.
 * Fix database redundancy.
 * Comprehensive coverage.
+* Enable validated federal employees to anonymously contribute information
 
 * Refine LLM Query:
 Extract employment change data for [the specified agency] since [date]
